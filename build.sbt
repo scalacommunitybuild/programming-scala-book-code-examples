@@ -24,7 +24,6 @@ libraryDependencies ++= {
     "com.typesafe.akka"      %% "akka-actor"      % versions("akka"),
     "com.typesafe.akka"      %% "akka-slf4j"      % versions("akka"),
     "ch.qos.logback"          % "logback-classic" % "1.2.3",
-    "org.scalaz"             %% "scalaz-core"     % "7.2.27",
     "org.scalacheck"         %% "scalacheck"      % "1.14.0" % "test",
     "org.scalatest"          %% "scalatest"       % "3.0.8-RC4" % "test", // threading the needle on versions...
     "org.specs2"             %% "specs2-core"     % "4.5.1"  % "test",
