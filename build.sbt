@@ -12,7 +12,7 @@ libraryDependencies ++= {
     CrossVersion.partialVersion(scalaVersion.value) match {
       case Some((2, 11)) => Map("async" -> "0.9.7",  "akka" -> "2.5.22")
       case Some((2, 12)) => Map("async" -> "0.10.0", "akka" -> "2.5.22")
-      case Some((2, 13)) => Map("async" -> "0.10.0", "akka" -> "2.6.0-M2")
+      case Some((2, 13)) => Map("async" -> "0.10.0", "akka" -> "2.6.16")
       case Some((m, n))  => println(s"Unrecognized compiler version $m.$n"); sys.exit(1)
       case None          => println("CrossVersion.partialVersion(scalaVersion.value) returned None!!"); sys.exit(1)
     }
