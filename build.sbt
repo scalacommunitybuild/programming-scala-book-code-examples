@@ -1,3 +1,5 @@
+resolvers += "nightlies" at "https://scala-ci.typesafe.com/artifactory/scala-integration/"
+
 name := "Programming Scala, Second Edition - Code examples"
 
 version := "2.2"
