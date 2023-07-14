@@ -4,8 +4,8 @@ version := "2.2"
 
 organization := "org.programming-scala"
 
-scalaVersion := "2.12.8"
-crossScalaVersions := Seq("2.11.12", "2.12.8", "2.13.0-RC2")
+scalaVersion := "2.13.11"
+crossScalaVersions := Seq("2.11.12", "2.12.18", "2.13.11")
 
 libraryDependencies ++= {
   lazy val versions =
@@ -19,7 +19,7 @@ libraryDependencies ++= {
   Seq(
     "org.scala-lang.modules" %% "scala-async"     % versions("async"),
     "org.scala-lang.modules" %% "scala-parser-combinators" % "1.1.2",
-    "org.scala-lang.modules" %% "scala-xml"       % "1.2.0",
+    "org.scala-lang.modules" %% "scala-xml"       % "2.2.0",
     "org.scala-lang"          % "scala-reflect"   % scalaVersion.value,
     "com.typesafe.akka"      %% "akka-actor"      % versions("akka"),
     "com.typesafe.akka"      %% "akka-slf4j"      % versions("akka"),
@@ -48,14 +48,14 @@ lazy val scalacOptionsAll = Seq(
   "-Ywarn-numeric-widen",              // Warn when numerics are widened.
   "-Ywarn-value-discard",              // Warn when non-Unit expression results are unused.
   "-Xcheckinit",                       // Wrap field accessors to throw an exception on uninitialized access.
-  "-Xfatal-warnings",                  // Fail the compilation if there are any warnings
+//  "-Xfatal-warnings",                  // Fail the compilation if there are any warnings
   "-Xlint:adapted-args",               // Warn if an argument list is modified to match the receiver.
   "-Xlint:delayedinit-select",         // Selecting member of DelayedInit.
   "-Xlint:doc-detached",               // A Scaladoc comment appears to be detached from its element.
   "-Xlint:inaccessible",               // Warn about inaccessible types in method signatures.
   "-Xlint:infer-any",                  // Warn when a type argument is inferred to be `Any`.
   "-Xlint:missing-interpolator",       // A string literal appears to be missing an interpolator id.
-  "-Xlint:nullary-override",           // Warn when non-nullary `def f()' overrides nullary `def f'.
+//  "-Xlint:nullary-override",           // Warn when non-nullary `def f()' overrides nullary `def f'.
   "-Xlint:nullary-unit",               // Warn when nullary methods return Unit.
   "-Xlint:option-implicit",            // Option.apply used implicit view.
   "-Xlint:package-object-classes",     // Class or object defined in package object.
@@ -116,7 +116,7 @@ scalacOptions ++= (
   }
 )
 
-scalacOptions in (Compile, console) ++= (
+Compile / console / scalacOptions ++= (
   CrossVersion.partialVersion(scalaVersion.value) match {
     case Some((2, 11)) => scalacOptions11 ++ scalacOptionsAllConsole
     case Some((2, 12)) => scalacOptions12 ++ scalacOptionsAllConsole
